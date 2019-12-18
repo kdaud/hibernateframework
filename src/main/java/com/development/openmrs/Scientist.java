@@ -81,7 +81,8 @@ public class Scientist {
 	 */
 	@Override
 	public String toString() {
-		return "Scientist [sId=" + sId + ", name=" + name + ", domain=" + domain + ", programmers=" + programmers + "]";
+		return "Scientist [sId = " + sId + ", name = " + name + ", domain = " + domain + ", programmers = " + programmers
+		        + "]";
 	}
 	
 }

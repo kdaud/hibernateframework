@@ -5,7 +5,8 @@ public class MyCode {
 	public static void main(String[] args) {
 		
 		Tester obj = new Tester();
-		System.out.println(obj.getDate().toString());
+		//obj = new Date();
+		System.out.println(obj.getDate());
 		
 	}
 	

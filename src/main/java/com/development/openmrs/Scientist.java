@@ -1,7 +1,11 @@
 package com.development.openmrs;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Scientist {
@@ -12,6 +16,23 @@ public class Scientist {
 	private String name;
 	
 	private String domain;
+	
+	@OneToMany(mappedBy = "scientist")
+	private Collection<Programmer> programmers = new ArrayList<Programmer>();
+	
+	/**
+	 * @return the programmers
+	 */
+	public Collection<Programmer> getProgrammers() {
+		return programmers;
+	}
+	
+	/**
+	 * @param programmers the programmers to set
+	 */
+	public void setProgrammers(Collection<Programmer> programmers) {
+		this.programmers = programmers;
+	}
 	
 	/**
 	 * @return the sId
@@ -53,6 +74,14 @@ public class Scientist {
 	 */
 	public void setDomain(String domain) {
 		this.domain = domain;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Scientist [sId=" + sId + ", name=" + name + ", domain=" + domain + ", programmers=" + programmers + "]";
 	}
 	
 }

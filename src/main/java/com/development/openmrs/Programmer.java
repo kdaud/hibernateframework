@@ -1,8 +1,8 @@
 package com.development.openmrs;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Programmer {
@@ -16,22 +16,26 @@ public class Programmer {
 	
 	private String field;
 	
-	@Embedded
-	private Language lang;
+	@ManyToOne
+	private Scientist scientist;
 	
 	/**
-	 * @return the lang
+	 * @return the scientist
 	 */
-	public Language getLang() {
-		return lang;
+	public Scientist getScientist() {
+		return scientist;
 	}
 	
 	/**
-	 * @param lang the lang to set
+	 * @param scientist the scientist to set
 	 */
-	public void setLang(Language lang) {
-		this.lang = lang;
+	public void setScientist(Scientist scientist) {
+		this.scientist = scientist;
 	}
+	
+
+	
+	
 	
 	/**
 	 * @return the pId
@@ -94,8 +98,12 @@ public class Programmer {
 	 */
 	@Override
 	public String toString() {
-		return "Programmer [ pId = " + pId + ", name = " + name + ", language = " + language + ", field = " + field
-		        + ", lang = " + lang + " ]";
+		return "Programmer [pId=" + pId + ", name=" + name + ", language=" + language + ", field=" + field + ", scientist="
+		        + scientist + "]";
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	
 }

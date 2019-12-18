@@ -26,6 +26,23 @@ public class Course {
 	@ManyToOne
 	private Lecturer lecturer;
 	
+	@ManyToOne
+	private College college;
+	
+	/**
+	 * @return the college
+	 */
+	public College getCollege() {
+		return college;
+	}
+	
+	/**
+	 * @param college the college to set
+	 */
+	public void setCollege(College college) {
+		this.college = college;
+	}
+	
 	/**
 	 * @return the lecturer
 	 */

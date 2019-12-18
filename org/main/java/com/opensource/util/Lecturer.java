@@ -9,6 +9,7 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,6 +33,23 @@ public class Lecturer {
 	
 	@OneToMany(mappedBy = "lecturer")
 	private Collection<Course> courses = new ArrayList<Course>();
+	
+	@ManyToOne
+	private College college;
+	
+	/**
+	 * @return the college
+	 */
+	public College getCollege() {
+		return college;
+	}
+	
+	/**
+	 * @param college the college to set
+	 */
+	public void setCollege(College college) {
+		this.college = college;
+	}
 	
 	/**
 	 * @return the courses
